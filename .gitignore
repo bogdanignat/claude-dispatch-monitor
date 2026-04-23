@@ -1,0 +1,19 @@
+node_modules/
+dist/
+
+# Runtime / local
+*.log
+.DS_Store
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# TypeScript incremental build
+*.tsbuildinfo
+
+# Test output
+coverage/
