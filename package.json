@@ -1,0 +1,38 @@
+{
+  "name": "claude-dispatch-monitor",
+  "version": "0.1.0",
+  "description": "Local web dashboard for monitoring Claude Code headless (claude -p) dispatches.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,vite -c blue,magenta \"npm:dev:server\" \"npm:dev:vite\"",
+    "dev:server": "node --watch server/server.mjs",
+    "dev:vite": "vite",
+    "build": "tsc -b && vite build",
+    "start": "NODE_ENV=production node server/server.mjs",
+    "typecheck": "tsc -b --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.59.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^4.1.5"
+  }
+}
